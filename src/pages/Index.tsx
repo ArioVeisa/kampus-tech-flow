@@ -19,15 +19,17 @@ import {
   Mail,
   ChevronDown
 } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 
 const Index = () => {
   const [selectedPath, setSelectedPath] = useState("cybersecurity");
+  const navigate = useNavigate();
 
   const learningPaths = {
     cybersecurity: {
       title: "Cybersecurity",
       icon: Shield,
-      color: "bg-red-500",
+      color: "bg-[#DB4437]", // Google Red
       description: "Keamanan siber dan ethical hacking",
       skills: ["Penetration Testing", "Security Auditing", "OWASP", "Cloud Security", "Incident Response"],
       projects: ["Security Assessment Web App", "Vulnerability Scanner", "Security Monitoring Dashboard"]
@@ -35,7 +37,7 @@ const Index = () => {
     mobile: {
       title: "Mobile Development",
       icon: Smartphone,
-      color: "bg-green-500",
+      color: "bg-[#0F9D58]", // Google Green
       description: "Android Native & Flutter development",
       skills: ["Kotlin", "Flutter", "Firebase", "Android Architecture", "UI/UX Mobile"],
       projects: ["E-commerce App", "Social Media App", "IoT Control App"]
@@ -43,7 +45,7 @@ const Index = () => {
     web: {
       title: "Web Development",
       icon: Globe,
-      color: "bg-blue-500",
+      color: "bg-[#4285F4]", // Google Blue
       description: "Frontend & Backend web development",
       skills: ["Angular", "React", "Node.js", "Cloud Functions", "PWA"],
       projects: ["Progressive Web App", "E-learning Platform", "Real-time Chat App"]
@@ -51,7 +53,7 @@ const Index = () => {
     ai: {
       title: "AI & Machine Learning",
       icon: Brain,
-      color: "bg-yellow-500",
+      color: "bg-[#F4B400]", // Google Yellow
       description: "Machine Learning dan Artificial Intelligence",
       skills: ["TensorFlow", "AutoML", "NLP", "Computer Vision", "MLOps"],
       projects: ["Chatbot AI", "Image Recognition System", "Recommendation Engine"]
@@ -96,15 +98,19 @@ const Index = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16">
             <div className="flex items-center space-x-2">
-              <div className="w-8 h-8 bg-gradient-to-r from-blue-600 to-green-500 rounded-lg"></div>
+              <img 
+                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRd5_XhSNGzy4tRhASC3Di1soydMnv_UpLlcw&s" 
+                alt="Google Logo" 
+                className="w-8 h-8 object-contain"
+              />
               <span className="font-bold text-xl text-slate-800">GDG Campus TelU</span>
             </div>
             <div className="hidden md:flex space-x-8">
-              <button onClick={() => scrollToSection('home')} className="text-slate-600 hover:text-blue-600 transition-colors">Beranda</button>
-              <button onClick={() => scrollToSection('about')} className="text-slate-600 hover:text-blue-600 transition-colors">Tentang</button>
-              <button onClick={() => scrollToSection('learning-paths')} className="text-slate-600 hover:text-blue-600 transition-colors">Learning Paths</button>
-              <button onClick={() => scrollToSection('programs')} className="text-slate-600 hover:text-blue-600 transition-colors">Program</button>
-              <button onClick={() => scrollToSection('contact')} className="text-slate-600 hover:text-blue-600 transition-colors">Kontak</button>
+              <button onClick={() => scrollToSection('home')} className="text-slate-600 hover:text-[#4285F4] transition-colors">Beranda</button>
+              <button onClick={() => scrollToSection('about')} className="text-slate-600 hover:text-[#4285F4] transition-colors">Tentang</button>
+              <button onClick={() => scrollToSection('learning-paths')} className="text-slate-600 hover:text-[#4285F4] transition-colors">Learning Paths</button>
+              <button onClick={() => scrollToSection('programs')} className="text-slate-600 hover:text-[#4285F4] transition-colors">Program</button>
+              <button onClick={() => scrollToSection('contact')} className="text-slate-600 hover:text-[#4285F4] transition-colors">Kontak</button>
             </div>
           </div>
         </div>
@@ -114,12 +120,12 @@ const Index = () => {
       <section id="home" className="pt-16 pb-20 px-4">
         <div className="max-w-7xl mx-auto text-center">
           <div className="pt-20 pb-16">
-            <Badge className="mb-6 bg-blue-100 text-blue-700 hover:bg-blue-100">
+            <Badge className="mb-6 bg-[#4285F4] text-white hover:bg-[#3367D6]">
               Google Developer Group Campus
             </Badge>
             <h1 className="text-5xl md:text-6xl font-bold text-slate-800 mb-6 leading-tight">
               Bangun Masa Depan
-              <span className="bg-gradient-to-r from-blue-600 to-green-500 bg-clip-text text-transparent block">
+              <span className="bg-gradient-to-r from-[#4285F4] to-[#0F9D58] bg-clip-text text-transparent block">
                 Teknologi Bersama
               </span>
             </h1>
@@ -129,7 +135,7 @@ const Index = () => {
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button 
                 size="lg" 
-                className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3"
+                className="bg-[#4285F4] hover:bg-[#3367D6] text-white px-8 py-3"
                 onClick={() => scrollToSection('learning-paths')}
               >
                 Mulai Belajar
@@ -137,8 +143,8 @@ const Index = () => {
               <Button 
                 size="lg" 
                 variant="outline" 
-                className="border-blue-600 text-blue-600 hover:bg-blue-50 px-8 py-3"
-                onClick={() => scrollToSection('contact')}
+                className="border-[#4285F4] text-[#4285F4] hover:bg-blue-50 px-8 py-3"
+                onClick={() => navigate('/daftar')}
               >
                 Bergabung Sekarang
               </Button>
@@ -160,8 +166,8 @@ const Index = () => {
           <div className="grid md:grid-cols-3 gap-8 mb-16">
             <Card className="text-center border-0 shadow-lg hover:shadow-xl transition-shadow">
               <CardHeader>
-                <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <Target className="w-8 h-8 text-blue-600" />
+                <div className="w-16 h-16 bg-[#4285F4]/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <Target className="w-8 h-8 text-[#4285F4]" />
                 </div>
                 <CardTitle className="text-slate-800">Visi</CardTitle>
               </CardHeader>
@@ -174,8 +180,8 @@ const Index = () => {
 
             <Card className="text-center border-0 shadow-lg hover:shadow-xl transition-shadow">
               <CardHeader>
-                <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <Heart className="w-8 h-8 text-green-600" />
+                <div className="w-16 h-16 bg-[#0F9D58]/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <Heart className="w-8 h-8 text-[#0F9D58]" />
                 </div>
                 <CardTitle className="text-slate-800">Misi</CardTitle>
               </CardHeader>
@@ -188,8 +194,8 @@ const Index = () => {
 
             <Card className="text-center border-0 shadow-lg hover:shadow-xl transition-shadow">
               <CardHeader>
-                <div className="w-16 h-16 bg-yellow-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <Award className="w-8 h-8 text-yellow-600" />
+                <div className="w-16 h-16 bg-[#F4B400]/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <Award className="w-8 h-8 text-[#F4B400]" />
                 </div>
                 <CardTitle className="text-slate-800">Tujuan</CardTitle>
               </CardHeader>
@@ -220,7 +226,7 @@ const Index = () => {
                 <Card 
                   key={key}
                   className={`cursor-pointer transition-all duration-300 border-0 shadow-lg hover:shadow-xl ${
-                    selectedPath === key ? 'ring-2 ring-blue-500 transform scale-105' : ''
+                    selectedPath === key ? 'ring-2 ring-[#4285F4] transform scale-105' : ''
                   }`}
                   onClick={() => setSelectedPath(key)}
                 >
@@ -269,7 +275,7 @@ const Index = () => {
                   <ul className="space-y-2">
                     {learningPaths[selectedPath].projects.map((project, index) => (
                       <li key={index} className="flex items-center space-x-2 text-slate-600">
-                        <Code className="w-4 h-4 text-blue-600" />
+                        <Code className="w-4 h-4 text-[#4285F4]" />
                         <span>{project}</span>
                       </li>
                     ))}
@@ -298,8 +304,8 @@ const Index = () => {
                 <Card key={index} className="border-0 shadow-lg hover:shadow-xl transition-shadow">
                   <CardHeader>
                     <div className="flex items-center space-x-4">
-                      <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center">
-                        <IconComponent className="w-6 h-6 text-blue-600" />
+                      <div className="w-12 h-12 bg-[#4285F4]/10 rounded-lg flex items-center justify-center">
+                        <IconComponent className="w-6 h-6 text-[#4285F4]" />
                       </div>
                       <div>
                         <CardTitle className="text-slate-800">{program.title}</CardTitle>
@@ -316,7 +322,7 @@ const Index = () => {
           </div>
 
           {/* Special Events */}
-          <Card className="border-0 shadow-xl bg-gradient-to-r from-blue-600 to-green-500 text-white">
+          <Card className="border-0 shadow-xl bg-gradient-to-r from-[#4285F4] to-[#0F9D58] text-white">
             <CardHeader>
               <CardTitle className="text-2xl">Acara Khusus & Unggulan</CardTitle>
             </CardHeader>
@@ -360,11 +366,11 @@ const Index = () => {
                   </p>
                   <div className="space-y-3 text-slate-600">
                     <div className="flex items-center space-x-2">
-                      <Mail className="w-5 h-5 text-blue-600" />
+                      <Mail className="w-5 h-5 text-[#4285F4]" />
                       <span>gdg.campus.telkomsby@gmail.com</span>
                     </div>
                     <div className="flex items-center space-x-2">
-                      <Users className="w-5 h-5 text-blue-600" />
+                      <Users className="w-5 h-5 text-[#4285F4]" />
                       <span>Telkom University Surabaya</span>
                     </div>
                   </div>
@@ -372,7 +378,8 @@ const Index = () => {
                 <div>
                   <Button 
                     size="lg" 
-                    className="w-full bg-gradient-to-r from-blue-600 to-green-500 hover:from-blue-700 hover:to-green-600 text-white py-4 text-lg"
+                    className="w-full bg-gradient-to-r from-[#4285F4] to-[#0F9D58] hover:from-[#3367D6] hover:to-[#0D8043] text-white py-4 text-lg"
+                    onClick={() => navigate('/daftar')}
                   >
                     Daftar Sekarang
                   </Button>
@@ -391,7 +398,11 @@ const Index = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
             <div className="flex items-center justify-center space-x-2 mb-4">
-              <div className="w-8 h-8 bg-gradient-to-r from-blue-600 to-green-500 rounded-lg"></div>
+              <img 
+                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRd5_XhSNGzy4tRhASC3Di1soydMnv_UpLlcw&s" 
+                alt="Google Logo" 
+                className="w-8 h-8 object-contain"
+              />
               <span className="font-bold text-xl">GDG Campus TelU Surabaya</span>
             </div>
             <p className="text-slate-400 mb-6">
