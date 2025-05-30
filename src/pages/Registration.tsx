@@ -73,8 +73,8 @@ const Registration = () => {
           </Link>
           <div className="flex items-center justify-center space-x-3 mb-4">
             <img 
-              src="https://res.cloudinary.com/startup-grind/image/upload/dpr_2.0,fl_sanitize/v1/gcs/platform-data-goog/contentbuilder/logo_dark_QmPdj9K.svg" 
-              alt="GDG Logo" 
+              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRd5_XhSNGzy4tRhASC3Di1soydMnv_UpLlcw&s" 
+              alt="Google Logo" 
               className="w-10 h-10" 
             />
             <h1 className="text-3xl font-normal text-gray-900">Daftar GDG Campus TelU</h1>
