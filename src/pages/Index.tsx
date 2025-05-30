@@ -1,9 +1,9 @@
-
 import { useState } from "react";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { Link } from "react-router-dom";
 import { 
   Calendar, 
   Users, 
@@ -92,7 +92,7 @@ const Index = () => {
   return (
     <div className="min-h-screen bg-white">
       {/* Navigation */}
-      <nav className="fixed top-0 w-full bg-white/95 backdrop-blur-sm border-b border-gray-200 z-50">
+      <nav className="fixed top-0 w-full bg-white/95 backdrop-blur-sm border-b border-gray-200 z-50 shadow-sm">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16">
             <div className="flex items-center space-x-3">
@@ -142,14 +142,15 @@ const Index = () => {
               >
                 Mulai Belajar
               </Button>
-              <Button 
-                size="lg" 
-                variant="outline" 
-                className="border-gray-300 text-gray-700 hover:bg-gray-50 px-6 py-3 text-sm font-medium rounded"
-                onClick={() => scrollToSection('contact')}
-              >
-                Bergabung Sekarang
-              </Button>
+              <Link to="/daftar">
+                <Button 
+                  size="lg" 
+                  variant="outline" 
+                  className="border-gray-300 text-gray-700 hover:bg-gray-50 px-6 py-3 text-sm font-medium rounded w-full"
+                >
+                  Bergabung Sekarang
+                </Button>
+              </Link>
             </div>
           </div>
         </div>
@@ -378,12 +379,14 @@ const Index = () => {
                   </div>
                 </div>
                 <div>
-                  <Button 
-                    size="lg" 
-                    className="w-full bg-blue-600 hover:bg-blue-700 text-white py-4 text-sm font-medium border-0 shadow-sm"
-                  >
-                    Daftar Sekarang
-                  </Button>
+                  <Link to="/daftar">
+                    <Button 
+                      size="lg" 
+                      className="w-full bg-blue-600 hover:bg-blue-700 text-white py-4 text-sm font-medium border-0 shadow-sm"
+                    >
+                      Daftar Sekarang
+                    </Button>
+                  </Link>
                   <p className="text-xs text-gray-500 mt-3 font-light">
                     Gratis untuk semua mahasiswa Telkom University Surabaya
                   </p>
